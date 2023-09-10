@@ -8,13 +8,32 @@ var specialChar = ["!", "@", "#", "$", "%", "&", "?", "/"];
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var finalPassword = [];
+
 // Write password to the #password input
 function generatePassword() {
-  var userChoice = window.prompt("How many characters do you want for your password?");
-  if (charLength < 8 || charLength > 128) {
-    window.alert("Please provide a value from 8 to 128.");
+  window.prompt("How many characters do you want for your password?");
+  // if (charLength < 8 || charLength > 128) {
+  //   window.alert("Please provide a value from 8 to 128.");
+  // } return generatePassword();
+
+  if window.confirm("Do you want to include uppercase letters in your password?");
+
+  function finalPassword() {
+    finalPassword = finalPassword.concat(uppercase);
+    
+  if window.confirm("Do you want to include lowercase letters in your password?");
+    finalPassword = finalPassword.concat(lowercase);
+    
+  if window.confirm("Do you want to include numbers in your password?");
+    finalPassword = finalPassword.concat(numeric);
+    
+  if window.confirm("Do you want to include special characters in your password?");
+  finalPassword = finalPassword.concat(specialChar);
   }
 }
+
+finalPassword();
 
 function writePassword() {
   var password = generatePassword();
