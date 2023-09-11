@@ -65,7 +65,7 @@ var generateBtn = document.querySelector("#generate");
 var userChoices = [];
 
 // ensures at least one of the characters will be selected
-var options = true;
+var options = false;
 
 // series of prompts for user to dictate their preference for a random password
 function generatePassword() {
@@ -84,30 +84,30 @@ function generatePassword() {
   );
   if (uppercaseAns) {
     userChoices = userChoices.concat(uppercase);
-    options = false;
+    options = true;
   }
   var lowercaseAns = window.confirm(
     "Do you want to include lowercase letters in your password?"
   );
   if (lowercaseAns) {
     userChoices = userChoices.concat(lowercase);
-    options = false;
+    options = true;
   }
   var numericAns = window.confirm(
     "Do you want to include numbers in your password?"
   );
   if (numericAns) {
     userChoices = userChoices.concat(numeric);
-    options = false;
+    options = true;
   }
   var specialCharAns = window.confirm(
     "Do you want to include special characters in your password?"
   );
   if (specialCharAns) {
     userChoices = userChoices.concat(specialChar);
-    options = false;
+    options = true;
   }
-  if (options = true) {
+  if (options = false) {
     window.alert("Please confirm at least one character.");
     return password;
   }
