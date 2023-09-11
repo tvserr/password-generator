@@ -72,11 +72,11 @@ function generatePassword() {
   var charLength = parseInt(
     window.prompt("How many characters do you want for your password?")
   );
-  while (charLength < 8 || charLength > 128 || ) {
+  while (charLength < 8 || charLength > 128) {
     window.alert("Please provide a value from 8 to 128.");
     charLength = parseInt(
-      window.prompt("Please provide a value from 8 to 128. How many characters do you want for your password?");
-    )
+      window.prompt("How many characters do you want for your password?")
+    );
   }
 
   var uppercaseAns = window.confirm(
@@ -107,9 +107,9 @@ function generatePassword() {
     userChoices = userChoices.concat(specialChar);
     options = true;
   }
-  if (options = false) {
+  if (!options) {
     window.alert("Please confirm at least one character.");
-    return password;
+    return generatePassword();
   }
   var password = "";
   for (var i = 0; i < charLength; i++) {
