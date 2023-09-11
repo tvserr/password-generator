@@ -4,19 +4,20 @@ var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["!", "@", "#", "$", "%", "&", "?", "/"];
 
-// Assignment Code
+// generate password button in html file
 var generateBtn = document.querySelector("#generate");
 
+// will store characters from user's preference
 var userChoices = [];
 
-// Write password to the #password input
+// series of prompts for user to dictate their preference for a random password
 function generatePassword() {
   var charLength = parseInt(window.prompt("How many characters do you want for your password?"));
   while (charLength < 8 || charLength > 128 || isNaN(charLength)) {
     window.alert("Please provide a value from 8 to 128.");
     charLength = parseInt(window.prompt("How many characters do you want for your password?"));
   }
-
+  
   var uppercaseAns = window.confirm("Do you want to include uppercase letters in your password?");
   if (uppercaseAns) {
     userChoices = userChoices.concat(uppercase);
@@ -38,20 +39,18 @@ function generatePassword() {
     var index = Math.floor(Math.random() * userChoices.length);
     password += userChoices[index];
   }
-
   return password;
-
 }
 
+// inputs generated password into html
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 writePassword();
 
-// Add event listener to generate button
+// add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
