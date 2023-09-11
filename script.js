@@ -64,6 +64,8 @@ var generateBtn = document.querySelector("#generate");
 // will store characters from user's preference
 var userChoices = [];
 
+var options = true;
+
 // series of prompts for user to dictate their preference for a random password
 function generatePassword() {
   var charLength = parseInt(
@@ -81,24 +83,32 @@ function generatePassword() {
   );
   if (uppercaseAns) {
     userChoices = userChoices.concat(uppercase);
+    options = false;
   }
   var lowercaseAns = window.confirm(
     "Do you want to include lowercase letters in your password?"
   );
   if (lowercaseAns) {
     userChoices = userChoices.concat(lowercase);
+    options = false;
   }
   var numericAns = window.confirm(
     "Do you want to include numbers in your password?"
   );
   if (numericAns) {
     userChoices = userChoices.concat(numeric);
+    options = false;
   }
   var specialCharAns = window.confirm(
     "Do you want to include special characters in your password?"
   );
   if (specialCharAns) {
     userChoices = userChoices.concat(specialChar);
+    options = false;
+  }
+  if (options = true) {
+    window.alert("Please confirm at least one character.")
+    window.prompt("How many characters do you want for your password?")
   }
   var password = "";
   for (var i = 0; i < charLength; i++) {
