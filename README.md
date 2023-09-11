@@ -20,10 +20,12 @@ You need to input a number from 8 to 128 which was dictate how many characters y
 
 Note: It will not accept a number less than 8 or more than 128 and will give you an alert message telling you to input a valid number.
 
-Try it out here: 
+Try it out here: https://tvserr.github.io/password-generator/
 
 ## Credits
+
 N/A
 
 ## License
+
 None
