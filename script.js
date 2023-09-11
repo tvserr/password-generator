@@ -64,6 +64,7 @@ var generateBtn = document.querySelector("#generate");
 // will store characters from user's preference
 var userChoices = [];
 
+// ensures at least one of the characters will be selected
 var options = true;
 
 // series of prompts for user to dictate their preference for a random password
@@ -71,7 +72,7 @@ function generatePassword() {
   var charLength = parseInt(
     window.prompt("How many characters do you want for your password?")
   );
-  while (charLength < 8 || charLength > 128 || isNaN(charLength)) {
+  while (charLength < 8 || charLength > 128) {
     window.alert("Please provide a value from 8 to 128.");
     charLength = parseInt(
       window.prompt("How many characters do you want for your password?")
