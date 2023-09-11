@@ -9,6 +9,8 @@ var specialChar = ["!", "@", "#", "$", "%", "&", "?", "/"];
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var userChoices = [];
+
 // Write password to the #password input
 function generatePassword() {
   var charLength = parseInt(window.prompt("How many characters do you want for your password?"));
@@ -18,16 +20,30 @@ function generatePassword() {
   }
 
   var uppercaseAns = window.confirm("Do you want to include uppercase letters in your password?");
+  if (uppercaseAns) {
+    userChoices = userChoices.concat(uppercase);
+  }
   var lowercaseAns =  window.confirm("Do you want to include lowercase letters in your password?");
-  var numericAns =  window.confirm("Do you want to include numbers in your password?");
-  var specialCharAns =  window.confirm("Do you want to include special characters in your password?");
+  if (lowercaseAns) {
+    userChoices = userChoices.concat(lowercase);
+  }
+  var numericAns = window.confirm("Do you want to include numbers in your password?");
+  if (numericAns) {
+    userChoices = userChoices.concat(numeric);
+  }
+  var specialCharAns = window.confirm("Do you want to include special characters in your password?");
+  if (specialCharAns) {
+    userChoices = userChoices.concat(specialChar);
+  }
 }
 
-var userChoices = [];
-  uppercaseAns: uppercase;
-  lowercaseAns: lowercase;
-  numericAns: numeric;
-  specialCharAns: specialChar;
+// var userChoices = [];
+//   uppercaseAns: uppercase;
+//   lowercaseAns: lowercase;
+//   numericAns: numeric;
+//   specialCharAns: specialChar;
+
+
 
 // var index = Math.floor(Math.random() * charLength.length);
 // var userChoices = options[index];
