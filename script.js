@@ -1,5 +1,5 @@
 // character options to pick from for generating a random password
-var charLength = [];
+// var charLength = [];
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -35,6 +35,14 @@ function generatePassword() {
   if (specialCharAns) {
     userChoices = userChoices.concat(specialChar);
   }
+  var password = "";
+  for (var i = 0; i < charLength; i++) {
+    var index = Math.floor(Math.random() * userChoices.length);
+    password += userChoices[index];
+  }
+
+  return password;
+
 }
 
 // var userChoices = [];
@@ -45,8 +53,7 @@ function generatePassword() {
 
 
 
-// var index = Math.floor(Math.random() * charLength.length);
-// var userChoices = options[index];
+
 
 function writePassword() {
   var password = generatePassword();
